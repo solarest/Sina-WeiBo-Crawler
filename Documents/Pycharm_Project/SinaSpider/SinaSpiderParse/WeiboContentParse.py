@@ -17,12 +17,14 @@ class WeiboContentParse():
     def weiboParse_text(self, html_content):
         myUtil = WeiboUtil()
         weibo_content = []
-        weibo_dict = {}
+
         _soup = BeautifulSoup(html_content, 'html.parser', from_encoding='utf-8')
         _result = _soup.find_all("div", class_="c")
         for index in _result:
+            weibo_dict = {}
             publish_text = index.find("span", class_="ctt")
             publish_time = index.find("span", class_="ct")
+
             if(publish_text != None and publish_time != None):
                 publish_text = publish_text.get_text()
                 print publish_text
@@ -30,8 +32,10 @@ class WeiboContentParse():
                 time_info = myUtil.Str2List(publish_time, " ")
                 publish_date = myUtil.DateFormat(time_info[0])
                 print publish_date
-            # weibo_dict["publish_text"] = publish_text
-            # weibo_dict["publish_time"] = publish_time
+                weibo_dict["publish_text"] = publish_text
+                weibo_dict["publish_date"] = publish_date
+                weibo_content.append(weibo_dict)
+
         return weibo_content
 
 if __name__ == '__main__':
@@ -45,4 +49,4 @@ if __name__ == '__main__':
     # print test.weiboParse_searchResults(html_content)
 
     html_content = WeiboResponse.Weibo_GetCont(myCookies, "http://weibo.cn/1729488283")
-    test.weiboParse_text(html_content)
+    print test.weiboParse_text(html_content)
