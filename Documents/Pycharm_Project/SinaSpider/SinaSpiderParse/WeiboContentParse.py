@@ -1,7 +1,8 @@
 # -*- coding:utf8 -*-
+
 from bs4 import BeautifulSoup
 from SinaSpiderLogin.WeiboLogin import WeiboLogin
-from SinaSoiderResponse.WeiboResponse import WeiboResponse
+from SinaSpiderResponse.WeiboResponse import WeiboResponse
 from SinaSpiderUtil.WeiboUtil import WeiboUtil
 
 class WeiboContentParse():
