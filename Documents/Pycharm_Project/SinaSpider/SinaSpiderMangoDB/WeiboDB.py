@@ -1,14 +1,17 @@
 # -*- coding:utf8 -*-
-
+import ConfigParser
 import pymongo
 
 class WeiboDB():
 
     def __init__(self):
-        pass
+        config = ConfigParser.ConfigParser()
+        config.read("/Users/mac/Documents/Pycharm_Project/SinaSpider/info.ini")
+        self.myhost = config.get("mangoDB", "host")
+        self.myport = int(config.get("mangoDB", "port"))
 
     def db_connection(self):
-        client = pymongo.MongoClient(host="127.0.0.1", port=27017)
+        client = pymongo.MongoClient(host=self.myhost, port=self.myport)
         db = client['SinaWeiboData']
         return db
 
@@ -23,7 +26,7 @@ class WeiboDB():
         print information_id
 
 if __name__ == '__main__':
-    post = [{"name": "xiaoming", "age": "25"}, {"name": "xiaoqiang", "age": "24"}]
+    post = [{"name": "aaa", "age": "25"}, {"bbb": "xiaoqiang", "age": "24"}]
     test = WeiboDB()
     db = test.db_connection()
     my_collection = test.db_collection(db)
