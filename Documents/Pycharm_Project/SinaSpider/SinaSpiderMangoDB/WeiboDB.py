@@ -12,24 +12,22 @@ class WeiboDB():
 
     def db_connection(self):
         client = pymongo.MongoClient(host=self.myhost, port=self.myport)
-        db = client['SinaWeiboData']
+        db = client['SinaWeibo']
         return db
 
     def db_collection(self, db):
-        coll = db["SinaWeiboData"]
+        coll = db["SinaWeibo"]
         return coll
 
     def db_insert(self, db, items):
-        coll = db['SinaWeiboData']
+        coll = db['SinaWeibo']
         information = items
         information_id = coll.insert(information)
         print information_id
 
 if __name__ == '__main__':
-    post = [{"name": "aaa", "age": "25"}, {"bbb": "xiaoqiang", "age": "24"}]
+    post = [{"name": "aaa", "age": "25"}, {"name": "bbb", "age": "24"}]
     test = WeiboDB()
     db = test.db_connection()
     my_collection = test.db_collection(db)
     test.db_insert(db, post)
-
-
