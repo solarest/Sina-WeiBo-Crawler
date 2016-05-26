@@ -1,17 +1,18 @@
 # -*-coding:utf8-*-
-import ConfigParser
+
 import cookielib
 import urllib
 import urllib2
+import ConfigParser
 
+from SinaSpiderUtil.WeiboUtil import WeiboUtil
 
 class WeiboLogin():
 
     def __init__(self):
-        config = ConfigParser.ConfigParser()
-        config.read("/Users/mac/Documents/Pycharm_Project/SinaSpider/info.ini")
-        self.myEmail = config.get("weibo_account", "Email")
-        self.myPassword = config.get("weibo_account", "Password")
+        Util = WeiboUtil()
+        self.myEmail = Util.ReadConfig("weibo_account", "Email")
+        self.myPassword = Util.ReadConfig("weibo_account", "Password")
 
     def SinaWeibo_GetCookies(self):
         sso_url = "https://passport.weibo.cn/sso/login"

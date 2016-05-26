@@ -9,10 +9,11 @@ class WeiboResponse():
         weibo_cont = requests.get(target_url, cookies=myCookies).content
         return weibo_cont
 
-    def Weibo_GetSearchResults(self, myCookies, college_name):
+    def Weibo_GetSearchResults(self, myCookies, college_name, page_num):
         search_param = {
             'keyword': college_name,
             'suser': '找人',
+            'page': page_num
         }
         result_cont = requests.post("http://weibo.cn/search/", data=search_param, cookies=myCookies).content
         return result_cont
