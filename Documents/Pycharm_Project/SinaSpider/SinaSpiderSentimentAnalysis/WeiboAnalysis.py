@@ -21,4 +21,4 @@ class WeiboAnalysis():
 if __name__ == '__main__':
     test = WeiboAnalysis()
     # print test.mytokenizer(u"你们不要总想搞个大新闻")
-    print test.weibo_Sentiment(u'你妈死了')
+    print test.weibo_Sentiment(u'今天天气真不错，好开心！！！')
