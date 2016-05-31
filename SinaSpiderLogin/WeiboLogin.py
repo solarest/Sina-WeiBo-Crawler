@@ -3,7 +3,7 @@
 import cookielib
 import urllib
 import urllib2
-import ConfigParser
+
 
 from SinaSpiderUtil.WeiboUtil import WeiboUtil
 
