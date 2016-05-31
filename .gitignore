@@ -1,0 +1,10 @@
+# pycharm
+.idea/
+
+# py file
+*.pyc
+
+# config file
+*.ini
+*.xml
+*.conf
