@@ -6,10 +6,9 @@ from SinaSpiderUtil.WeiboUtil import WeiboUtil
 
 class WeiboDB():
 
-    def __init__(self):
-        Util = WeiboUtil()
-        self.myhost = Util.ReadConfig("mangoDB", "host")
-        self.myport = int(Util.ReadConfig("mangoDB", "port"))
+    def __init__(self, host="localhost", port=27017):
+        self.myhost = host
+        self.myport = port
 
     def db_connection(self, db_name):
         client = pymongo.MongoClient(host=self.myhost, port=self.myport)

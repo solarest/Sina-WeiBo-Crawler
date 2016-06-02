@@ -35,10 +35,10 @@ class WeiboLogin():
         opener = urllib2.build_opener(handler)
         opener.open(req, data=login_data)
         for item in weibo_cookies:
-            print item.name+"="+item.value
+            print item.name+" = "+item.value
         return weibo_cookies
 
 if __name__ == '__main__':
     test = WeiboLogin()
     myCookies = test.SinaWeibo_GetCookies()
-
+    # print test.myEmail
