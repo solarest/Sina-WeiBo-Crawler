@@ -2,6 +2,8 @@
 
 from snownlp import SnowNLP
 import jieba
+from textblob import TextBlob
+
 
 class WeiboAnalysis():
 
@@ -17,6 +19,11 @@ class WeiboAnalysis():
         s = SnowNLP(text)
         sentiment_point = s.sentiments
         return sentiment_point
+
+    def weibo_Sentiment_blob(self, text):
+        blob = TextBlob(text)
+        blob.noun_phrases
+
 
 if __name__ == '__main__':
     test = WeiboAnalysis()

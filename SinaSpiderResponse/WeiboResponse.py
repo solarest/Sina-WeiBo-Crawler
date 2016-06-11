@@ -22,4 +22,4 @@ if __name__ == '__main__':
     WeiboLogin = WeiboLogin()
     WeiboResponse = WeiboResponse()
     myCookies = WeiboLogin.SinaWeibo_GetCookies()
-    print WeiboResponse.Weibo_GetSearchResults(myCookies, "西华大学")
+    print WeiboResponse.Weibo_GetSearchResults(myCookies, "西华大学", 1)

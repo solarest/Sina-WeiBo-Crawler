@@ -21,7 +21,7 @@ weibo_login = WeiboLogin()
 weibo_response = WeiboResponse()
 content_parser = WeiboContentParse()
 my_cookies = weibo_login.SinaWeibo_GetCookies()
-weibo_db = WeiboDB(myhost,myport)
+weibo_db = WeiboDB(myhost, myport)
 mongo_conn = weibo_db.db_connection(weibo_connection)
 
 

@@ -14,8 +14,6 @@ class WeiboUtil:
         formatTimeString = time.strftime("%Y-%m-%d", formatTime)
         return formatTimeString
 
-    #TODO: Solve encoding porblem!
-
     def DateFormat(self, mydate):
         if (mydate == u"今天" or mydate.find(u"分钟前") is not -1):
             use_date = time.strftime('%Y-%m-%d')
