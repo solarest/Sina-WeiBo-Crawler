@@ -102,7 +102,3 @@ if __name__ == '__main__':
         weibo_thread = weibo_get_thread(my_cookies, college)
         weibo_thread.start()
         weibo_thread_list.append(weibo_thread)
-
-
-
-
